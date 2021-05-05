@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://k1smet.github.io/2021/05/04/hello-world/</loc>
+    <loc>https://k1smet.github.io/2021/05/05/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/</loc>
     
-    <lastmod>2021-05-04</lastmod>
+    <lastmod>2021-05-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://k1smet.github.io/2021/05/05/hello-world1/</loc>
+    <loc>https://k1smet.github.io/2021/05/04/hello-world/</loc>
     
     <lastmod>2021-05-04</lastmod>
     
@@ -23,6 +23,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://k1smet.github.io/tags/Github/</loc>
+    <lastmod>2021-05-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 
   

@@ -6,7 +6,7 @@
   <link href="https://k1smet.github.io/atom.xml" rel="self"/>
   
   <link href="https://k1smet.github.io/"/>
-  <updated>2021-05-04T14:19:37.628Z</updated>
+  <updated>2021-05-05T15:06:59.959Z</updated>
   <id>https://k1smet.github.io/</id>
   
   <author>
@@ -17,22 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://k1smet.github.io/2021/05/05/hello-world1/"/>
-    <id>https://k1smet.github.io/2021/05/05/hello-world1/</id>
-    <published>2021-05-05T13:27:00.786Z</published>
-    <updated>2021-05-04T14:19:37.628Z</updated>
+    <title>github无法访问</title>
+    <link href="https://k1smet.github.io/2021/05/05/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/"/>
+    <id>https://k1smet.github.io/2021/05/05/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/</id>
+    <published>2021-05-05T14:51:30.000Z</published>
+    <updated>2021-05-05T15:06:59.959Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="GitHub-访问不了？教你一招轻松解决"><a href="#GitHub-访问不了？教你一招轻松解决" class="headerlink" title="GitHub 访问不了？教你一招轻松解决"></a><strong>GitHub 访问不了？教你一招轻松解决</strong></h2><h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><ul><li>Windows 系统：C:\Windows\System32\drivers\etc\hosts</li><li>Linux 系统：/etc/hosts</li><li>Mac（苹果电脑）系统：/etc/hosts</li><li>Android（安卓）系统：/system/etc/hosts</li><li>iPhone（iOS）系统：/etc/hosts</li></ul><h3 id="找到文件添加："><a href="#找到文件添加：" class="headerlink" title="找到文件添加："></a>找到文件添加：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">140.82.112.4 github.com</span><br><span class="line">140.82.113.3 gist.github.com</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">199.232.68.133 raw.githubusercontent.com</span><br><span class="line">199.232.68.133 gist.githubusercontent.com</span><br><span class="line">199.232.68.133 cloud.githubusercontent.com</span><br><span class="line">151.101.192.133 camo.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars1.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars2.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars8.githubusercontent.com</span><br></pre></td></tr></table></figure><h2 id="windows刷新dns缓存"><a href="#windows刷新dns缓存" class="headerlink" title="windows刷新dns缓存"></a>windows刷新dns缓存</h2><ul><li>win+R cmd</li><li>ipconfig /displaydns</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h2 id=&quot;GitHub-访问不了？教你一招轻松解决&quot;&gt;&lt;a href=&quot;#GitHub-访问不了？教你一招轻松解决&quot; class=&quot;headerlink&quot; title=&quot;GitHub 访问不了？教你一招轻松解决&quot;&gt;&lt;/a&gt;&lt;strong&gt;GitHub 访问不了？教你一招轻松</summary>
       
     
     
     
+    
+    <category term="Github" scheme="https://k1smet.github.io/tags/Github/"/>
     
   </entry>
   
