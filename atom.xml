@@ -3,11 +3,11 @@
   <title>k1s7met</title>
   
   <subtitle>个人博客</subtitle>
-  <link href="http://www.qiuyiwei.website/atom.xml" rel="self"/>
+  <link href="https://k1smet.github.io/atom.xml" rel="self"/>
   
-  <link href="http://www.qiuyiwei.website/"/>
+  <link href="https://k1smet.github.io/"/>
   <updated>2021-05-04T14:19:37.629Z</updated>
-  <id>http://www.qiuyiwei.website/</id>
+  <id>https://k1smet.github.io/</id>
   
   <author>
     <name>仇熠炜</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.qiuyiwei.website/2021/05/04/hello-world/"/>
-    <id>http://www.qiuyiwei.website/2021/05/04/hello-world/</id>
+    <link href="https://k1smet.github.io/2021/05/04/hello-world/"/>
+    <id>https://k1smet.github.io/2021/05/04/hello-world/</id>
     <published>2021-05-04T14:19:37.629Z</published>
     <updated>2021-05-04T14:19:37.629Z</updated>
     
