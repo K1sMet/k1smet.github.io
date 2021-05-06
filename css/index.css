@@ -1546,6 +1546,18 @@ img:not([src]) {
 .img-alt:hover {
   text-decoration: none !important;
 }
+#daodream-container .daodream-powered-by span {
+  display: none;
+}
+#daodream-container .daodream-app-profile-team {
+  display: none;
+}
+#daodream-container .daodream-sheet-header-title {
+  display: none !important;
+}
+#daodream-container .daodream-active-admin-name {
+  display: none !important;
+}
 :root {
   --hl-color: #90a4ae;
   --hl-bg: #f6f8fa;
