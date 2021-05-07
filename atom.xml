@@ -3,11 +3,11 @@
   <title>k1s7met</title>
   
   <subtitle>个人博客</subtitle>
-  <link href="https://k1smet.github.io/atom.xml" rel="self"/>
+  <link href="http://www.qiuyiwei.website/atom.xml" rel="self"/>
   
-  <link href="https://k1smet.github.io/"/>
+  <link href="http://www.qiuyiwei.website/"/>
   <updated>2021-05-05T15:06:59.959Z</updated>
-  <id>https://k1smet.github.io/</id>
+  <id>http://www.qiuyiwei.website/</id>
   
   <author>
     <name>仇熠炜</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>github无法访问</title>
-    <link href="https://k1smet.github.io/2021/05/05/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/"/>
-    <id>https://k1smet.github.io/2021/05/05/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/</id>
+    <link href="http://www.qiuyiwei.website/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE.html"/>
+    <id>http://www.qiuyiwei.website/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE.html</id>
     <published>2021-05-05T14:51:30.000Z</published>
     <updated>2021-05-05T15:06:59.959Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="Github" scheme="https://k1smet.github.io/tags/Github/"/>
+    <category term="Github" scheme="http://www.qiuyiwei.website/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://k1smet.github.io/2021/05/04/hello-world/"/>
-    <id>https://k1smet.github.io/2021/05/04/hello-world/</id>
+    <link href="http://www.qiuyiwei.website/hello-world.html"/>
+    <id>http://www.qiuyiwei.website/hello-world.html</id>
     <published>2021-05-04T14:19:37.629Z</published>
     <updated>2021-05-04T14:19:37.629Z</updated>
     
