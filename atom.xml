@@ -6,7 +6,7 @@
   <link href="http://www.qiuyiwei.website/atom.xml" rel="self"/>
   
   <link href="http://www.qiuyiwei.website/"/>
-  <updated>2021-05-05T15:06:59.959Z</updated>
+  <updated>2021-05-10T14:50:39.738Z</updated>
   <id>http://www.qiuyiwei.website/</id>
   
   <author>
@@ -17,19 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="http://www.qiuyiwei.website/test.html"/>
+    <id>http://www.qiuyiwei.website/test.html</id>
+    <published>2021-05-10T14:50:39.000Z</published>
+    <updated>2021-05-10T14:50:39.738Z</updated>
+    
+    <content type="html"><![CDATA[<script type="text/javascript" src="/js/src/bai.js"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/bai.js&quot;&gt;&lt;/script&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>github无法访问</title>
     <link href="http://www.qiuyiwei.website/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE.html"/>
     <id>http://www.qiuyiwei.website/github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE.html</id>
     <published>2021-05-05T14:51:30.000Z</published>
-    <updated>2021-05-05T15:06:59.959Z</updated>
+    <updated>2021-05-09T13:16:47.236Z</updated>
     
     <content type="html"><![CDATA[<h2 id="GitHub-访问不了？教你一招轻松解决"><a href="#GitHub-访问不了？教你一招轻松解决" class="headerlink" title="GitHub 访问不了？教你一招轻松解决"></a><strong>GitHub 访问不了？教你一招轻松解决</strong></h2><h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><ul><li>Windows 系统：C:\Windows\System32\drivers\etc\hosts</li><li>Linux 系统：/etc/hosts</li><li>Mac（苹果电脑）系统：/etc/hosts</li><li>Android（安卓）系统：/system/etc/hosts</li><li>iPhone（iOS）系统：/etc/hosts</li></ul><h3 id="找到文件添加："><a href="#找到文件添加：" class="headerlink" title="找到文件添加："></a>找到文件添加：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">140.82.112.4 github.com</span><br><span class="line">140.82.113.3 gist.github.com</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">199.232.68.133 raw.githubusercontent.com</span><br><span class="line">199.232.68.133 gist.githubusercontent.com</span><br><span class="line">199.232.68.133 cloud.githubusercontent.com</span><br><span class="line">151.101.192.133 camo.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars1.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars2.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133 avatars8.githubusercontent.com</span><br></pre></td></tr></table></figure><h2 id="windows刷新dns缓存"><a href="#windows刷新dns缓存" class="headerlink" title="windows刷新dns缓存"></a>windows刷新dns缓存</h2><ul><li>win+R cmd</li><li>ipconfig /displaydns</li></ul>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;GitHub-访问不了？教你一招轻松解决&quot;&gt;&lt;a href=&quot;#GitHub-访问不了？教你一招轻松解决&quot; class=&quot;headerlink&quot; title=&quot;GitHub 访问不了？教你一招轻松解决&quot;&gt;&lt;/a&gt;&lt;strong&gt;GitHub 访问不了？教你一招轻松</summary>
-      
+    <summary type="html">Github打不开</summary>
     
     
     

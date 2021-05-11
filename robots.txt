@@ -1,0 +1,5 @@
+User-agent: * Allow: /
+Allow: /archives/
+
+Sitemap: http://www.qiuyiwei.website/sitemap.xml
+Sitemap: http://www.qiuyiwei.website/baidusitemap.xml
