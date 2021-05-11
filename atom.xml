@@ -6,7 +6,7 @@
   <link href="http://www.qiuyiwei.website/atom.xml" rel="self"/>
   
   <link href="http://www.qiuyiwei.website/"/>
-  <updated>2021-05-10T14:50:39.738Z</updated>
+  <updated>2021-05-11T17:26:20.186Z</updated>
   <id>http://www.qiuyiwei.website/</id>
   
   <author>
@@ -17,23 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://www.qiuyiwei.website/test.html"/>
-    <id>http://www.qiuyiwei.website/test.html</id>
+    <title>随机背景图片获取地址亲测有效-动漫图片api接口</title>
+    <link href="http://www.qiuyiwei.website/%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88-%E5%8A%A8%E6%BC%AB%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.html"/>
+    <id>http://www.qiuyiwei.website/%E9%9A%8F%E6%9C%BA%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88-%E5%8A%A8%E6%BC%AB%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.html</id>
     <published>2021-05-10T14:50:39.000Z</published>
-    <updated>2021-05-10T14:50:39.738Z</updated>
+    <updated>2021-05-11T17:26:20.186Z</updated>
     
-    <content type="html"><![CDATA[<script type="text/javascript" src="/js/src/bai.js"></script>]]></content>
+    <content type="html"><![CDATA[<h2 id="动态获取随机动漫背景图片api"><a href="#动态获取随机动漫背景图片api" class="headerlink" title="动态获取随机动漫背景图片api"></a><strong>动态获取随机动漫背景图片api</strong></h2><p>1.<a href="https://api.ixiaowai.cn/api/api.php">https://api.ixiaowai.cn/api/api.php</a><br><img src="https://api.ixiaowai.cn/api/api.php" alt="1"><br>2.<a href="https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php">https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php</a><br><img src="https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php" alt="2"><br>3.<a href="http://www.dmoe.cc/random.php">http://www.dmoe.cc/random.php</a><br><img src="http://www.dmoe.cc/random.php" alt="3"><br>4.<a href="https://api.ixiaowai.cn/mcapi/mcapi.php">https://api.ixiaowai.cn/mcapi/mcapi.php</a><br><img src="https://api.ixiaowai.cn/mcapi/mcapi.php" alt="4"><br>5.<a href="https://acg.yanwz.cn/wallpaper/api.php">https://acg.yanwz.cn/wallpaper/api.php</a><br><img src="https://acg.yanwz.cn/wallpaper/api.php" alt="5"><br>6.<a href="https://api.lyiqk.cn/miku">https://api.lyiqk.cn/miku</a><br><img src="https://api.lyiqk.cn/miku" alt="6"><br>7.<a href="https://random.52ecy.cn/randbg.php">https://random.52ecy.cn/randbg.php</a><br><img src="https://random.52ecy.cn/randbg.php" alt="7"><br>8.<a href="https://img.catct.cn/mc.php">https://img.catct.cn/mc.php</a><br><img src="https://img.catct.cn/mc.php" alt="8"><br>9.<a href="https://img.catct.cn/">https://img.catct.cn</a><br><img src="https://img.catct.cn/" alt="9"></p><p>亲测有效！</p><p>感谢大佬：<a href="https://blog.csdn.net/qq_43523315/article/details/111033044">勿埋我心</a></p><script type="text/javascript" src="/js/src/bai.js"></script>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/bai.js&quot;&gt;&lt;/script&gt;
-</summary>
-      
+    <summary type="html">随机动漫壁纸api接口,刷新网页换背景</summary>
     
     
     
+    
+    <category term="动漫" scheme="http://www.qiuyiwei.website/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+    <category term="图片接口" scheme="http://www.qiuyiwei.website/tags/%E5%9B%BE%E7%89%87%E6%8E%A5%E5%8F%A3/"/>
+    
+    <category term="api" scheme="http://www.qiuyiwei.website/tags/api/"/>
     
   </entry>
   
