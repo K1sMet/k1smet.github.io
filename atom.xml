@@ -6,7 +6,7 @@
   <link href="http://www.qiuyiwei.website/atom.xml" rel="self"/>
   
   <link href="http://www.qiuyiwei.website/"/>
-  <updated>2021-05-11T17:26:20.186Z</updated>
+  <updated>2021-05-19T12:09:03.993Z</updated>
   <id>http://www.qiuyiwei.website/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>rocketmq双主部署失败</title>
+    <link href="http://www.qiuyiwei.website/rocketmq%E5%8F%8C%E4%B8%BB%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.html"/>
+    <id>http://www.qiuyiwei.website/rocketmq%E5%8F%8C%E4%B8%BB%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.html</id>
+    <published>2021-05-19T13:55:05.000Z</published>
+    <updated>2021-05-19T12:09:03.993Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="rocketmq-4-7-1获取2m-noslave中broker-a-properties配置失败"><a href="#rocketmq-4-7-1获取2m-noslave中broker-a-properties配置失败" class="headerlink" title="rocketmq-4.7.1获取2m-noslave中broker-a.properties配置失败"></a><strong>rocketmq-4.7.1获取2m-noslave中broker-a.properties配置失败</strong></h2><h1 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h1><ol><li>在/rocketmq-4.7.1/conf目录下配置broker.conf文件（内容参考broker-a.properties文件）</li><li>直接运行去bin目录下运行 mqbroker -c ../conf/broker.conf &amp;</li></ol><h2 id="RocketMQ集群部署模式"><a href="#RocketMQ集群部署模式" class="headerlink" title="RocketMQ集群部署模式"></a>RocketMQ集群部署模式</h2><ul><li><h3 id="单master模式"><a href="#单master模式" class="headerlink" title="单master模式"></a>单master模式</h3>也就是只有一个 master 节点，如果master节点挂掉了，会导致整个服务不可用，线上不宜使用，适合个人学习使用</li><li><h3 id="多master模式"><a href="#多master模式" class="headerlink" title="多master模式"></a>多master模式</h3>多个 master 节点组成集群，单个 master 节点宕机或者重启对应用没有影响。<br>优点：所有模式中性能最高<br>缺点：单个 master 节点宕机期间，未被消费的消息在节点恢复之前不可用，消息的实时性就受到影响。<br>注意：使用同步刷盘可以保证消息不丢失，同时 Topic 相对应的 queue 应该分布在集群中各个节点，而不是只在某各节点上，否则，该节点宕机会对订阅该 topic 的应用造成影响。  </li><li><h3 id="多master-多slave异步复制模式"><a href="#多master-多slave异步复制模式" class="headerlink" title="多master 多slave异步复制模式"></a>多master 多slave异步复制模式</h3>在多 master 模式的基础上，每个 master 节点都有至少一个对应的 slave。master<br>节点可读可写，但是 slave 只能读不能写，类似于 mysql 的主备模式。<br>优点： 在 master 宕机时，消费者可以从 slave 读取消息，消息的实时性不会受影响，性能几乎和多 master 一样。<br>缺点：使用异步复制的同步方式有可能会有消息丢失的问题。  </li><li><h3 id="多master-多slave同步双写模式"><a href="#多master-多slave同步双写模式" class="headerlink" title="多master 多slave同步双写模式"></a>多master 多slave同步双写模式</h3>同多 master 多 slave 异步复制模式类似，区别在于 master 和 slave 之间的数据同步方式。<br>优点：同步双写的同步模式能保证数据不丢失。<br>缺点：发送单个消息 RT 会略长，性能相比异步复制低10%左右。<br>刷盘策略：同步刷盘和异步刷盘（指的是节点自身数据是同步还是异步存储）<br>同步方式：同步双写和异步复制（指的一组 master 和 slave 之间数据的同步）<br>注意：要保证数据可靠，需采用同步刷盘和同步双写的方式，但性能会较其他方式低。 </li></ul><h2 id="RocketMQ双主模式实现"><a href="#RocketMQ双主模式实现" class="headerlink" title="RocketMQ双主模式实现"></a>RocketMQ双主模式实现</h2><p>   考虑到具体项目情况，暂时采取双主的模式来实现消息中间件处理</p><blockquote><p>1.下载rocketmq </p></blockquote><p>   地址： <a href="https://github.com/apache/rocketmq/archive/refs/tags/rocketmq-all-4.7.1.tar.gz%EF%BC%88%E4%B8%AA%E4%BA%BA%E6%AF%94%E8%BE%83%E5%96%9C%E6%AC%A2%E7%94%A8%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E4%BD%86%E4%B8%8D%E6%8E%A8%E8%8D%904.8%E7%89%88%E6%9C%AC%EF%BC%8C%E6%9C%89%E4%B8%AA%E5%9D%91%E5%BF%98%E8%AE%B0%E5%95%A5%E4%BA%86%EF%BC%89">https://github.com/apache/rocketmq/archive/refs/tags/rocketmq-all-4.7.1.tar.gz（个人比较喜欢用最新的版本，但不推荐4.8版本，有个坑忘记啥了）</a></p><blockquote><p>2.解压  </p></blockquote><p>   tar -zxvf rocketmq-rocketmq-all-4.8.0.tar.gz</p><blockquote><p>3.修改rocketmq-4.7.1/conf/broker.conf配置文件  </p></blockquote><p>  A服务器：192.168.1.11<br>  B服务器：192.168.1.12<br>  不同服务器【主机名-brokerName】、【brokerIP1】需修改</p><pre><code># Broker所属哪个集群，默认【DefaultCluster】brokerClusterName=rocketmq-cluster# 本机主机名（B服务器则为broker-b）brokerName=broker-a # BrokerId，必须是大等于0的整数，0表示Master，&gt;0表示Slave，一个Master可以挂多个Slave，Master与Slave通过BrokerName来配对，默认【0】brokerIP1=192.168.1.11brokerId=0# Name Server地址namesrvAddr=192.168.1.11:9876;192.168.1.12:9876;# 在发送消息时，自动创建服务器不存在的Topic，默认创建的队列数defaultTopicQueueNums=4# 是否允许Broker自动创建Topic，建议线下开启，线上关闭，默认【true】autoCreateTopicEnable=true# 是否允许Broker自动创建订阅组，建议线下开启，线上关闭，默认【true】autoCreateSubscriptionGroup=true# Broker对外服务的监听端口,默认【10911】listenPort=10911# 删除文件时间点，默认凌晨4点deleteWhen=04# 文件保留时间，默认48小时fileReservedTime=48# 单个conmmitlog文件大小默认1GBmapedFileSizeCommitLog=1073741824# 单个consumequeue文件大小默认30W条，根据业务调整mapedFileSizeConsumeQueue=300000# 销毁MappedFile被拒绝的最大存活时间，默认120s# destroyMapedFileIntervalForcibly=120000# 重试删除文件间隔# redeleteHangedFileInterval=120000# commitlog目录所在分区的最大使用比例，如果commitlog目录所在的分区使用比例大于该值，则触发过期文件删除diskMaxUsedSpaceRatio=88# 存储路径storePathRootDir=/rocketmq-4.7.1/store# commitLog 存储路径storePathCommitLog=/rocketmq-4.7.1/store/commitlog# 消息队列存储路径storePathConsumeQueue=/rocketmq-4.7.1/store/consumequeue# 消息索引存储路径storePathIndex=/rocketmq-4.7.1/store/index# checkpoint 文件存储路径storePathCheckpoint=/rocketmq-4.7.1/store/checkpoint# abort 文件存储路径abortFile=/rocketmq-4.7.1/store/abort# 限制消息大小maxMessageSize=65536# 一次刷盘至少需要脏页的数量，针对commitlog文件# flushCommitLogLeastPages=4# 一次刷盘至少需要脏页的数量,默认2页,针对 Consume文件# flushConsumeQueueLeastPages=2# commitlog两次刷盘的最大间隔,如果超过该间隔,将fushCommitLogLeastPages要求直接执行刷盘操作# flushCommitLogThoroughInterval=10000# Consume两次刷盘的最大间隔,如果超过该间隔,将忽略# flushConsumeQueueThoroughInterval=60000# Broker 的角色# ASYNC_MASTER 异步复制Master# SYNC_MASTER 同步双写Master# SLAVEbrokerRole=ASYNC_MASTER# 刷盘方式# ASYNC_FLUSH 异步刷盘# SYNC_FLUSH 同部刷盘flushDiskType=ASYNC_FLUSH# checkTransactionMessageEnable=false# 服务端处理消息发送线程池数量# sendMessageThreadPoolNums=128# 服务端处理消息拉取线程池线程数量 默认为16加上当前操作系统CPU核数的两倍# pullMessageThreadPoolNums=128 </code></pre><blockquote><p>4.修改rocketmq文件存储位置</p></blockquote><p>   mkdir /usr/local/rocketmq-4.7.1/store<br>   mkdir /usr/local/rocketmq-4.7.1/store/commitlog<br>   mkdir /usr/local/rocketmq-4.7.1/store/consumequeue<br>   mkdir /usr/local/rocketmq-4.7.1/store/index  </p><blockquote><p>5.修改RocketMQ JVM启动参数</p></blockquote><p>   在/rocketmq-4.7.1/bin文件夹内输入vim runbroker.sh / vim runserver.sh<br>   根据配置修改：<br>   JAVA_OPT=”${JAVA_OPT} -server -Xms1g -Xmx1g -Xmn512m”<br>   JAVA_OPT=”${JAVA_OPT} -XX:MaxDirectMemorySize=1g”</p><blockquote><p>6.启动rocketmq</p></blockquote><p>  rocketmq-4.7.1/bin目录下  </p><ul><li>启动mqnamesrv<br>nohup sh mqnamesrv &amp;（没有权限则执行：chmod 777 ./mqnamesrv）<br>可以查看rocketmq-4.7.1/logs/rocketmqlogs/namesrv.log日志文件看是否启动成功：The Name Server boot success 代表成功  </li><li>启动broker<br>nohup sh mqbroker -c ../conf/broker.conf &gt;/dev/null 2&gt;&amp;1 &amp;<br>可以查看rocketmq/logs/rocketmqlogs/broker.log 出现****:9876 OK两个地址 代表成功</li></ul><blockquote><p>7.关闭rocketmq </p></blockquote><p>   /rocketmq-4.7.1/bin目录下：mqshutdown broker、mqshutdown namesrv分别关闭</p><blockquote><p>8.其他</p></blockquote><ul><li>需安装jdk</li><li>两台服务器需互通，开放端口9876、10911<br>添加指定需要开放的端口：<br>firewall-cmd –add-port=9876/tcp –permanent<br>firewall-cmd –add-port=10911/tcp –permanent<br>重载入添加的端口：<br>firewall-cmd –reload<br>查询指定端口是否开启成功：<br>firewall-cmd –query-port=9876/tcp<br>查看开放的端口<br>firewall-cmd –zone=public –list-ports</li></ul><p>感谢大佬：<a href="https://blog.csdn.net/wangjinduo35056/article/details/88341798">王金铎王</a><br><a href="https://blog.csdn.net/u014182745/article/details/77154444">MasterCoding</a></p><script type="text/javascript" src="/js/src/bai.js"></script>]]></content>
+    
+    
+    <summary type="html">rocketmq读取2m-noslave中broker-a.properties配置失败</summary>
+    
+    
+    
+    
+    <category term="rocketmq" scheme="http://www.qiuyiwei.website/tags/rocketmq/"/>
+    
+    <category term="消息中间件" scheme="http://www.qiuyiwei.website/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    <category term="java" scheme="http://www.qiuyiwei.website/tags/java/"/>
+    
+    <category term="分布式" scheme="http://www.qiuyiwei.website/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>随机背景图片获取地址亲测有效-动漫图片api接口</title>
